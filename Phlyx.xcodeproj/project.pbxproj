@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF95B0CCA2D9F37149A35932 /* Pods_Phlyx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0670C15BFA808EAC186ACA66 /* Pods_Phlyx.framework */; };
 		E633BB881EFB1221000F6EB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E633BB871EFB1221000F6EB6 /* AppDelegate.swift */; };
 		E633BB8D1EFB1221000F6EB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E633BB8B1EFB1221000F6EB6 /* Main.storyboard */; };
 		E633BB8F1EFB1221000F6EB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E633BB8E1EFB1221000F6EB6 /* Assets.xcassets */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0670C15BFA808EAC186ACA66 /* Pods_Phlyx.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Phlyx.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E94A04C7CB40E257BEDD3EC /* Pods-Phlyx.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Phlyx.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Phlyx/Pods-Phlyx.debug.xcconfig"; sourceTree = "<group>"; };
+		46180B573A5DF73173B1F45A /* Pods-Phlyx.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Phlyx.release.xcconfig"; path = "Pods/Target Support Files/Pods-Phlyx/Pods-Phlyx.release.xcconfig"; sourceTree = "<group>"; };
 		E633BB841EFB1221000F6EB6 /* Phlyx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Phlyx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E633BB871EFB1221000F6EB6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E633BB8C1EFB1221000F6EB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -31,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF95B0CCA2D9F37149A35932 /* Pods_Phlyx.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		09FD8F4FE5871E0F8D91F7CF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0670C15BFA808EAC186ACA66 /* Pods_Phlyx.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		94FE5E339665D12F0614AE64 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2E94A04C7CB40E257BEDD3EC /* Pods-Phlyx.debug.xcconfig */,
+				46180B573A5DF73173B1F45A /* Pods-Phlyx.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E633BB7B1EFB1221000F6EB6 = {
 			isa = PBXGroup;
 			children = (
 				E633BB861EFB1221000F6EB6 /* Phlyx */,
 				E633BB851EFB1221000F6EB6 /* Products */,
+				94FE5E339665D12F0614AE64 /* Pods */,
+				09FD8F4FE5871E0F8D91F7CF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,9 +98,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E633BB961EFB1221000F6EB6 /* Build configuration list for PBXNativeTarget "Phlyx" */;
 			buildPhases = (
+				AE21D6DAF5BFEF922E5CE36A /* [CP] Check Pods Manifest.lock */,
 				E633BB801EFB1221000F6EB6 /* Sources */,
 				E633BB811EFB1221000F6EB6 /* Frameworks */,
 				E633BB821EFB1221000F6EB6 /* Resources */,
+				976C3CFDA2AC14B0216E9A5A /* [CP] Embed Pods Frameworks */,
+				0186B2512779984815E21022 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -133,6 +160,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0186B2512779984815E21022 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Phlyx/Pods-Phlyx-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		976C3CFDA2AC14B0216E9A5A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Phlyx/Pods-Phlyx-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AE21D6DAF5BFEF922E5CE36A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E633BB801EFB1221000F6EB6 /* Sources */ = {
@@ -264,6 +339,7 @@
 		};
 		E633BB971EFB1221000F6EB6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E94A04C7CB40E257BEDD3EC /* Pods-Phlyx.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Phlyx/Info.plist;
@@ -276,6 +352,7 @@
 		};
 		E633BB981EFB1221000F6EB6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46180B573A5DF73173B1F45A /* Pods-Phlyx.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Phlyx/Info.plist;
