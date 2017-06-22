@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class MoviesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate {
 
@@ -32,7 +33,7 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         cell.overviewLabel!.text = overview
         
         if let posterPath = movie["poster_path"] as? String {
-            let posterBaseUrl = "http://image.tmdb.org/t/p/w500"
+            let posterBaseUrl = "https://image.tmdb.org/t/p/w500"
             let posterUrl = URL(string: posterBaseUrl + posterPath)
             cell.posterView.af_setImage(withURL: posterUrl!)
         }
@@ -46,6 +47,14 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         return cell
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let cell =  sender as! UITableViewCell
+        if let indexPath = tableView.indexPath(for: cell) {
+            let movie = movies[indexPath.row]
+            let detailViewController = segue.destination as! DetailViewController
+            detailViewController.movie = movie
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
