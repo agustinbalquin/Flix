@@ -18,6 +18,9 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     
     var movies:[[String: Any]] = []
     var isMoreDataLoading = false
+    var pageNum = 1
+    var maxPageNum = 0
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movies.count
@@ -87,6 +90,7 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
                 let movies = dataDictionary["results"] as! [[String: Any]]
                 // TODO: Store the movies in a property to use elsewhere
                 self.movies = movies
+                self.maxPageNum = dataDictionary["total_pages"] as! Int
                 // TODO: Reload your table view data
                 self.tableView.reloadData()
             }
@@ -132,32 +136,40 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func loadMoreData() {
-        let url = URL(string: "https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed")!
-        let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
-        let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
-        let task = session.dataTask(with: request) { (data, response, error) in
-            // This will run when the network request returns
-            if let error = error {
-                print(error.localizedDescription)
-            } else if let data = data {
-                let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
+        if pageNum < maxPageNum {
+            pageNum += 1
+            let url = URL(string: "https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed&page=\(pageNum)")!
+            let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
+            let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
+            let task = session.dataTask(with: request) { (data, response, error) in
+                // This will run when the network request returns
+                if let error = error {
+                    print(error.localizedDescription)
+                } else if let data = data {
+                    let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
+                    
+                    
+                    // TODO: Get the array of movies
+                    let movies = dataDictionary["results"] as! [[String: Any]]
+                    // TODO: Store the movies in a property to use elsewhere
+                    for mov in movies {
+                        self.movies.append(mov)
+                    }
+                    // TODO: Reload your table view data
+                    self.isMoreDataLoading = false
+                    self.tableView.reloadData()
+                    
+                }
                 
-                
-                // TODO: Get the array of movies
-                let movies = dataDictionary["results"] as! [[String: Any]]
-                // TODO: Store the movies in a property to use elsewhere
-                self.movies = movies
-                // TODO: Reload your table view data
-                self.tableView.reloadData()
                 
             }
-            
-            
+            task.resume()
         }
-        task.resume()
-
+        
     }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if (!isMoreDataLoading) {
             // Calculate the position of one screen length before the bottom of the results
