@@ -37,10 +37,9 @@ Please list two areas of the assignment you'd like to **discuss further with you
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
-![Basic Functionality Walkthrough](http://i.imgur.com/clLI1LC.gifv)
 
+<img src='http://i.imgur.com/clLI1LC.gifv' title='Basic Functionality Video Walkthrough' width='' alt='Video Walkthrough' />
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
-
 ## Notes
 
 Describe any challenges encountered while building the app.
