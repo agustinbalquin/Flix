@@ -17,6 +17,7 @@
 		E633BB9E1EFB3BDD000F6EB6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E633BB9D1EFB3BDD000F6EB6 /* DetailViewController.swift */; };
 		E633BBA51EFC8097000F6EB6 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E633BBA41EFC8097000F6EB6 /* CollectionViewController.swift */; };
 		E633BBA71EFC83CE000F6EB6 /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E633BBA61EFC83CE000F6EB6 /* MovieCollectionViewCell.swift */; };
+		E633BBAB1EFCE13F000F6EB6 /* LargeImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E633BBAA1EFCE13F000F6EB6 /* LargeImageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		E633BB9D1EFB3BDD000F6EB6 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		E633BBA41EFC8097000F6EB6 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		E633BBA61EFC83CE000F6EB6 /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
+		E633BBAA1EFCE13F000F6EB6 /* LargeImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LargeImageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				E633BB991EFB129E000F6EB6 /* MoviesViewController.swift */,
 				E633BB9D1EFB3BDD000F6EB6 /* DetailViewController.swift */,
 				E633BBA41EFC8097000F6EB6 /* CollectionViewController.swift */,
+				E633BBAA1EFCE13F000F6EB6 /* LargeImageViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 				E633BBA71EFC83CE000F6EB6 /* MovieCollectionViewCell.swift in Sources */,
 				E633BB9E1EFB3BDD000F6EB6 /* DetailViewController.swift in Sources */,
 				E633BBA51EFC8097000F6EB6 /* CollectionViewController.swift in Sources */,
+				E633BBAB1EFCE13F000F6EB6 /* LargeImageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

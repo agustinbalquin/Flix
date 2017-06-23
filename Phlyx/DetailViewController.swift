@@ -20,6 +20,7 @@ class DetailViewController: UIViewController {
     
     var movie: [String: Any]?
     
+    var posterURL:URL = URL(fileURLWithPath: "")
     override func viewDidLoad() {
         super.viewDidLoad()
         if let movie = movie {
@@ -43,6 +44,7 @@ class DetailViewController: UIViewController {
             if let posterPath = movie["poster_path"] as? String {
                 
                 let posterUrl = URL(string: baseUrl + posterPath)
+                self.posterURL = posterUrl!
                 posterView.af_setImage(withURL: posterUrl!)
             }
             else {
@@ -57,7 +59,14 @@ class DetailViewController: UIViewController {
     }
     
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let largeImageViewController = segue.destination as! LargeImageViewController
+        largeImageViewController.photoURL = self.posterURL
+        
+    }
     
+   
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

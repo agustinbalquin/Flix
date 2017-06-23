@@ -94,6 +94,13 @@
                                 <rect key="frame" x="16" y="218" width="134" height="184"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="PGP-OG-fFs">
+                                <rect key="frame" x="16" y="218" width="129" height="184"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="d85-h8-Z6S" kind="push" id="aUP-1d-WqM"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Wonder Woman" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="R6O-Yd-Dix">
                                 <rect key="frame" x="158" y="289" width="134" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -130,6 +137,30 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PnB-jq-qhN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1710.5" y="152.5"/>
+        </scene>
+        <!--Large Image View Controller-->
+        <scene sceneID="Jlt-OX-ct2">
+            <objects>
+                <viewController id="d85-h8-Z6S" customClass="LargeImageViewController" customModule="Phlyx" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5YY-UH-pbj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" id="pPn-xG-AU2">
+                                <rect key="frame" x="0.0" y="52" width="375" height="563"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="8JP-0b-Lc2"/>
+                    <connections>
+                        <outlet property="imageView" destination="pPn-xG-AU2" id="P5G-o8-6Yg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T3R-t8-vmI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2320.5" y="152.5"/>
         </scene>
         <!--Now Playing-->
         <scene sceneID="9vp-Ib-dAy">
@@ -181,21 +212,21 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="n3b-oq-JqJ">
-                                    <size key="itemSize" width="182" height="270"/>
+                                    <size key="itemSize" width="181" height="272"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="com.codepath.auggie" id="Knl-nW-cj4" customClass="MovieCollectionViewCell" customModule="Phlyx" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="182" height="270"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="181" height="272"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="182" height="270"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="181" height="272"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" id="IyW-qn-Ufe">
-                                                    <rect key="frame" x="0.0" y="0.0" width="182" height="270"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="181" height="272"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" red="0.084404712595954626" green="0.4658113420009613" blue="0.11828565014989617" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </imageView>
@@ -203,6 +234,7 @@
                                         </view>
                                         <connections>
                                             <outlet property="movieImage" destination="IyW-qn-Ufe" id="0LG-fW-WIC"/>
+                                            <segue destination="Tl4-5I-jiJ" kind="push" id="FAP-DD-IeJ"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -248,4 +280,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="FAP-DD-IeJ"/>
+    </inferredMetricsTieBreakers>
 </document>
