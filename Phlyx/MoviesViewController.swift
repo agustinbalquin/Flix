@@ -9,18 +9,25 @@
 import UIKit
 import AlamofireImage
 
-class MoviesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate {
+class MoviesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
 
     
+    
+    
+    @IBOutlet weak var pickerView: UIPickerView!
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    
+    
+    let categories = ["Now Playing","Top Rated", "Upcoming"]
     var movies:[[String: Any]] = []
     var isMoreDataLoading = false
     var pageNum = 1
     var maxPageNum = 2
     var pageStarted = false
+    var subURL = "now_playing"
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -78,7 +85,7 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         // Do any additional setup after loading the view.
         
         
-        let url = URL(string: "https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed")!
+        let url = URL(string: "https://api.themoviedb.org/3/movie/\(subURL)?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed")!
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
         let task = session.dataTask(with: request) { (data, response, error) in
@@ -123,7 +130,7 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         // ... Create the URLRequest `myRequest` ...
         
         // Configure session so that completion handler is executed on main UI thread
-        let url = URL(string: "https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed")!
+        let url = URL(string: "https://api.themoviedb.org/3/movie/\(subURL)?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed")!
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
         let task = session.dataTask(with: request) { (data, response, error) in
@@ -158,7 +165,7 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         if pageNum < maxPageNum && pageStarted {
             incrementPageNum()
         }
-        let url = URL(string: "https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed&page=\(pageNum)")!
+        let url = URL(string: "https://api.themoviedb.org/3/movie/\(subURL)?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed&page=\(pageNum)")!
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
         let task = session.dataTask(with: request) { (data, response, error) in
@@ -176,6 +183,7 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
                     self.movies.append(mov)
                 }
                 // TODO: Reload your table view data
+                self.pageStarted = true
                 self.isMoreDataLoading = false
                 self.tableView.reloadData()
                 
@@ -190,6 +198,7 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if (!isMoreDataLoading) {
             // Calculate the position of one screen length before the bottom of the results
@@ -206,6 +215,39 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
             }
         }
     }
+    
+    
+    
+    
+//    
+// Picker Functions
+//
 
-
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return categories.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return categories[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        switch categories[row] {
+        case "Now Playing": self.subURL = "now_playing"
+        case "Top Rated": self.subURL = "top_rated"
+        case "Upcoming": self.subURL = "upcoming"
+        default: self.subURL = "now_playing"
+        }
+        pageNum = 1
+        maxPageNum = 2
+        self.pageStarted = false
+        movies = []
+        self.loadMoreData()
+        self.tableView.reloadData()
+    }
 }

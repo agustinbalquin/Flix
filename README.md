@@ -27,6 +27,7 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
+- [x] User can Query for different categories (using PickerView)
 - [x] Infinite Scrolling with updated queries
 - [x] Movie Rating is shown on CollectionView posters
 - [x] List anything else that you can get done to improve the app functionality!
