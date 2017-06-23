@@ -26,7 +26,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <connections>
                                         <outlet property="dataSource" destination="BYZ-38-t0r" id="eGd-rw-zUt"/>
                                         <outlet property="delegate" destination="BYZ-38-t0r" id="I2Z-nl-AA5"/>
@@ -109,7 +109,7 @@
                                 <rect key="frame" x="16" y="218" width="129" height="184"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <segue destination="d85-h8-Z6S" kind="push" id="aUP-1d-WqM"/>
+                                    <segue destination="d85-h8-Z6S" kind="push" identifier="posterIdentifier" id="aUP-1d-WqM"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Wonder Woman" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="R6O-Yd-Dix">
@@ -140,6 +140,9 @@
                                     <color key="titleColor" red="0.80642725240000002" green="0.95234118069999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="CZ2-Ph-1IU" kind="push" identifier="trailerIdentifier" id="Wt7-Ph-Js4"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -180,6 +183,31 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T3R-t8-vmI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2320.5" y="152.5"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="I9F-nf-66X">
+            <objects>
+                <viewController id="CZ2-Ph-1IU" customClass="WebViewController" customModule="Phlyx" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cQv-5n-Tn8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" misplaced="YES" id="NPU-OH-vgt">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Xc1-pm-Usr"/>
+                    <connections>
+                        <outlet property="webView" destination="NPU-OH-vgt" id="Cgp-Zy-xtx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P80-h0-QIB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2297.5" y="934.5"/>
         </scene>
         <!--Now Playing-->
         <scene sceneID="9vp-Ib-dAy">

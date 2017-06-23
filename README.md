@@ -27,6 +27,7 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
+- [x] Trailer is availavle to be seen
 - [x] User can Query for different categories (using PickerView)
 - [x] Infinite Scrolling with updated queries
 - [x] Movie Rating is shown on CollectionView posters

@@ -100,6 +100,11 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
                 alertController.addAction(OKAction)
 
                 print(error.localizedDescription)
+                
+                self.present(alertController, animated: true) {
+                    // optional code for what happens after the alert controller has finished presenting
+                    
+                }
             } else if let data = data {
                 let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
                 
@@ -138,11 +143,13 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
             if let error = error {
                 print(error.localizedDescription)
             } else if let data = data {
+                
                 let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
                 
                 
                 // TODO: Get the array of movies
                 let movies = dataDictionary["results"] as! [[String: Any]]
+                self.maxPageNum = dataDictionary["total_pages"] as! Int
                 // TODO: Store the movies in a property to use elsewhere
                 self.movies = movies
                 // TODO: Reload your table view data
@@ -182,6 +189,7 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
                 for mov in movies {
                     self.movies.append(mov)
                 }
+                self.maxPageNum = dataDictionary["total_pages"] as! Int
                 // TODO: Reload your table view data
                 self.pageStarted = true
                 self.isMoreDataLoading = false
