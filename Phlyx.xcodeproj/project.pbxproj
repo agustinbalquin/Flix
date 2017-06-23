@@ -157,6 +157,7 @@
 				TargetAttributes = {
 					E633BB831EFB1221000F6EB6 = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = X3Y925GSHC;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -378,6 +379,7 @@
 			baseConfigurationReference = 2E94A04C7CB40E257BEDD3EC /* Pods-Phlyx.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = X3Y925GSHC;
 				INFOPLIST_FILE = Phlyx/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.facebook.abalquin.Phlyx;
@@ -391,6 +393,7 @@
 			baseConfigurationReference = 46180B573A5DF73173B1F45A /* Pods-Phlyx.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = X3Y925GSHC;
 				INFOPLIST_FILE = Phlyx/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.facebook.abalquin.Phlyx;

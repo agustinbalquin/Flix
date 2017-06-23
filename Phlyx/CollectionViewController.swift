@@ -13,6 +13,7 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource  {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
+
     var movies:[[String: Any]] = []
     var pageNum = 1
     var maxPageNum = 2

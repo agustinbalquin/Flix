@@ -109,7 +109,7 @@
                                 <rect key="frame" x="16" y="218" width="129" height="184"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <segue destination="d85-h8-Z6S" kind="push" identifier="posterIdentifier" id="aUP-1d-WqM"/>
+                                    <segue destination="d85-h8-Z6S" kind="modal" identifier="posterIdentifier" id="aUP-1d-WqM"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Wonder Woman" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="R6O-Yd-Dix">
@@ -141,7 +141,7 @@
                                     <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="CZ2-Ph-1IU" kind="push" identifier="trailerIdentifier" id="Wt7-Ph-Js4"/>
+                                    <segue destination="CZ2-Ph-1IU" kind="modal" identifier="trailerIdentifier" id="Wt7-Ph-Js4"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -197,6 +197,18 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ECL-4A-4XT">
+                                <rect key="frame" x="295" y="0.0" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <state key="normal" title="ⓧ">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonClose:" destination="CZ2-Ph-1IU" eventType="touchUpInside" id="kbe-ab-6Ak"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -207,7 +219,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P80-h0-QIB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2297.5" y="934.5"/>
+            <point key="canvasLocation" x="2321" y="979"/>
         </scene>
         <!--Now Playing-->
         <scene sceneID="9vp-Ib-dAy">
@@ -347,6 +359,6 @@
         <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="tae-rR-SOt"/>
+        <segue reference="FAP-DD-IeJ"/>
     </inferredMetricsTieBreakers>
 </document>
