@@ -64,9 +64,11 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource  {
         if let posterPath = movie["poster_path"] as? String {
             let posterBaseUrl = "https://image.tmdb.org/t/p/w500"
             let posterUrl = URL(string: posterBaseUrl + posterPath)
+            let rate = movie["vote_average"] as! Int
             
             cell.movieImage.af_setImage(withURL: posterUrl!)
             
+            cell.ratingLabel!.text = "\(rate)/10 ☆"
             
         }
         else {
