@@ -38,13 +38,18 @@ The following **additional** features are implemented:
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
 1. Discussing better standards for MVC concepts
-2. 
+2. More stress on cleaner code
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
+Required
 <img src='http://i.imgur.com/clLI1LC.gif' title='Basic Functionality Video Walkthrough' width='' alt='Video Walkthrough' />
+
+Multiple Functionality
+<img src='http://i.imgur.com/okPC7Qp.gif' title='Multiple Functionality Video Walkthrough' width='' alt='Video Walkthrough' />
+
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 ## Notes
 
