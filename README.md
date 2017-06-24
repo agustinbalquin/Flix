@@ -48,7 +48,9 @@ Required
 <img src='http://i.imgur.com/clLI1LC.gif' title='Basic Functionality Video Walkthrough' width='' alt='Video Walkthrough' />
 
 Multiple Functionality
-<img src='http://i.imgur.com/okPC7Qp.gif' title='Multiple Functionality Video Walkthrough' width='' alt='Video2 Walkthrough' />
+<img src='http://i.imgur.com/7ftSOEx.gif' title='Multiple Functionality Video Walkthrough' width='' alt='Video2 Walkthrough' />
+<img src='http://i.imgur.com/WDxTYAk.gif' title='Multiple Functionality Video Walkthrough' width='' alt='Video2 Walkthrough' />
+<img src='http://i.imgur.com/pOcIgqw.gif' title='Multiple Functionality Video Walkthrough' width='' alt='Video2 Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 ## Notes
