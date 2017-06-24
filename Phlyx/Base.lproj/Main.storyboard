@@ -109,7 +109,7 @@
                                 <rect key="frame" x="16" y="218" width="129" height="184"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <segue destination="d85-h8-Z6S" kind="modal" identifier="posterIdentifier" id="aUP-1d-WqM"/>
+                                    <segue destination="d85-h8-Z6S" kind="push" identifier="posterIdentifier" id="aUP-1d-WqM"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Wonder Woman" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="R6O-Yd-Dix">
@@ -171,6 +171,10 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" id="pPn-xG-AU2">
                                 <rect key="frame" x="0.0" y="62" width="375" height="563"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="ozr-aa-T1H" appends="YES" id="BHD-cR-4Cj"/>
+                                </connections>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -178,11 +182,62 @@
                     <navigationItem key="navigationItem" id="8JP-0b-Lc2"/>
                     <connections>
                         <outlet property="imageView" destination="pPn-xG-AU2" id="P5G-o8-6Yg"/>
+                        <segue destination="xaw-34-jK3" kind="modal" identifier="fullSegue" id="bsG-tz-nMF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T3R-t8-vmI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ozr-aa-T1H">
+                    <connections>
+                        <action selector="fullscreenTap:" destination="d85-h8-Z6S" id="SoL-2L-3tj"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2320.5" y="152.5"/>
+        </scene>
+        <!--Full Screen View Controller-->
+        <scene sceneID="tGD-AG-BRK">
+            <objects>
+                <viewController id="xaw-34-jK3" customClass="FullScreenViewController" customModule="Phlyx" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="H1h-xN-ZRV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" maximumZoomScale="3" id="0qE-VM-pxl">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="rjD-SE-yBR">
+                                        <rect key="frame" x="0.0" y="48" width="375" height="570"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="OA8-lj-9do">
+                                        <rect key="frame" x="289" y="0.0" width="78" height="74"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                        <state key="normal" title="ⓧ">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="closeModal:" destination="xaw-34-jK3" eventType="touchUpInside" id="JiI-Fx-WIo"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <connections>
+                                    <outlet property="delegate" destination="xaw-34-jK3" id="kMS-D3-gVj"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="rjD-SE-yBR" id="zSC-wY-FDz"/>
+                        <outlet property="scrollView" destination="0qE-VM-pxl" id="8uX-Ge-EfL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EpW-SS-1xL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2931.5" y="152.5"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="I9F-nf-66X">
